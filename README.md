@@ -29,6 +29,8 @@ plug Plug.Static.IndexHtml, at: "/docs"
 plug Plug.Static, at: "/", from: :my_app
 ```
 
+See docs at https://hexdocs.pm/plug_static_index_html
+
 ## License (MIT)
 
 Copyright (c) 2016 Michael Buhot (m.buhot@gmail.com)

@@ -1,14 +1,19 @@
 defmodule PlugStaticIndexHtml.Mixfile do
   use Mix.Project
 
+  @version "0.1.1"
+
   def project do
     [app: :plug_static_index_html,
-     version: "0.1.0",
+     version: @version,
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps,
-     package: package]
+     package: package,
+     docs: [extras: ["README.md"], main: "readme",
+              source_ref: "#{@version}",
+              source_url: "https://github.com/mbuhot/plug_static_index_html"]]
   end
 
   def package do
