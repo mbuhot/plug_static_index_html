@@ -1,7 +1,7 @@
 defmodule PlugStaticIndexHtml.Mixfile do
   use Mix.Project
 
-  @version "0.1.2"
+  @version "0.1.3"
 
   def project do
     [app: :plug_static_index_html,
@@ -9,8 +9,14 @@ defmodule PlugStaticIndexHtml.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps,
-     package: package,
+     deps: deps(),
+     dialyzer: [
+       plt_add_apps: [:mix],
+       plt_add_deps: :apps_direct,
+       flags: ["-Werror_handling", "-Wunmatched_returns", "-Wunderspecs"],
+       remove_defaults: [:unknown]
+     ],
+     package: package(),
      docs: [extras: ["README.md"], main: "readme",
               source_ref: "#{@version}",
               source_url: "https://github.com/mbuhot/plug_static_index_html"]]
@@ -30,7 +36,9 @@ defmodule PlugStaticIndexHtml.Mixfile do
   defp deps do
     [
       {:plug, "~> 1.0"},
-      {:ex_doc, ">= 0.13.0", only: :dev}
+      {:ex_doc, ">= 0.13.0", only: :dev},
+      {:dialyxir, "~> 0.5", runtime: false},
+      {:credo, ">= 0.0.0", runtime: false}
     ]
   end
 end
