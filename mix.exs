@@ -37,8 +37,8 @@ defmodule PlugStaticIndexHtml.Mixfile do
     [
       {:plug, "~> 1.0"},
       {:ex_doc, ">= 0.13.0", only: :dev},
-      {:dialyxir, "~> 0.5", runtime: false},
-      {:credo, ">= 0.0.0", runtime: false}
+      {:dialyxir, "~> 0.5", only: [:dev, :test], runtime: false},
+      {:credo, ">= 0.0.0", only: [:dev, :test], runtime: false}
     ]
   end
 end
