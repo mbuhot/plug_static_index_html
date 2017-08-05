@@ -8,7 +8,7 @@ Serves `index.html` pages for requests to paths without a filename in Phoenix / 
 
     ```elixir
     def deps do
-      [{:plug_static_index_html, "~> 0.1.0"}]
+      [{:plug_static_index_html, "~> 1.0"}]
     end
     ```
 
